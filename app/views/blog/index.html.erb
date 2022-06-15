@@ -1,7 +1,8 @@
 <h1>Welcome to my Blog</h1>
 
-<ul><%  @posts.each do |blog|  %>
-<li><%= link_to blog.title, blog_path(blog)%></li>
+<ul><%  @blogs.each do |blog|  %>
+<li><%= link_to blog.title, blog_path(blog)%> <br>
+</li>
 <%end%>
 </ul>
 <%= link_to "create new blog", new_blog_path %> 
