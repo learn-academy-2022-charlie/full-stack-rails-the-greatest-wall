@@ -5,8 +5,17 @@ class BlogController < ApplicationController
     def show
         @post = Blog.find(params[:id])
     end
-    def create 
-        @text = params[:text]
-        @submit = Blog.create(title:params[:title], content:params[:content])
+    def new
+        @post = Blog.new 
+    end
+    def create
+        @post = Blog.create(blog_params)
+        if @post.valid?
+            redirect_to blogs_path
+        end
+    end
+    private
+    def blog_params
+        params.require(:blog).permit(:title, :content)
     end
 end

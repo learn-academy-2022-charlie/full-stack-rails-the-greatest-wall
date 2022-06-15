@@ -1,0 +1,15 @@
+<%= form_with model: @post do |form| %>
+    <%= form.label :title%>
+    <br>
+    <%= form.text_field :title %>
+    <br>
+    <br>
+    <%= form.label :content%>
+    <br>
+    <%= form.text_field :content %>
+    <br>
+    <br>
+    <%= form.submit "Submit" %>
+  <% end %>
+  <br>
+  <%= link_to "home page", blogs_path %>
