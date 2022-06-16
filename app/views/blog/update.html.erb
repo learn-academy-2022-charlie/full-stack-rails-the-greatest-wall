@@ -1,0 +1,19 @@
+<%= form_with model: @blog do |form| %>
+    <%= @blog.title%>
+    <br>
+    <%= form.label :title%>
+    <br>
+    <%= form.text_field :title %>
+    <br>
+    <br>
+    <%= @blog.content%>
+    <br>
+    <%= form.label :content%>
+    <br>
+    <%= form.text_field :content %>
+    <br>
+    <br>
+    <%= form.submit "Submit" %>
+  <% end %>
+  <br>
+  <%= link_to "home page", blogs_path %>
