@@ -14,12 +14,20 @@ class BlogController < ApplicationController
             redirect_to blogs_path
         end
     end
-    private
-    def blog_params
-        params.require(:blog).permit(:title, :content)
-    end
     def destroy
         @blog = Blog.find(params[:id])
         @blog.destroy
+        redirect_to blogs_path , :status => :see_other
+    end
+
+    def update
+        @blog = Blog.find(params[:id])
+        @blog.update(blog_params)
+        redirect_to blogs_path
+    end
+    
+    private
+    def blog_params
+        params.require(:blog).permit(:title, :content)
     end
 end
