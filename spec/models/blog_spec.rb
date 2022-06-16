@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Blog, type: :model do
+
   it 'has a title that cannot be empty' do
    new_blog = Blog.create title:"", content:"kdjvsdfvkdfbvdfkfvfkvfkj"
     expect(new_blog.errors[:title]).to_not be_empty
@@ -19,4 +20,3 @@ RSpec.describe Blog, type: :model do
     expect(new_blog.errors[:title]).to_not be_empty
   end
 end
-
