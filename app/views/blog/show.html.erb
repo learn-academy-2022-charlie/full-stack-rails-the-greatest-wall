@@ -6,6 +6,7 @@
 
 <%= link_to 'Back to Home', blogs_path%>
 <br>
+
 <%= form_with model: @blog do |form| %>
     <%= form.label :title%>
     <br>
@@ -22,3 +23,4 @@
 <br>
 
 <%= link_to 'Delete this post FOREVER', destroy_blog_path(@blog), data:{turbo_method: :delete, turbo_confirm: 'Are you sure?'}%>
+
